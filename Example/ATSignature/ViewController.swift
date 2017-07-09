@@ -7,18 +7,65 @@
 //
 
 import UIKit
+import ATSignature
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ATSignatureDelegate {
 
+    @IBOutlet weak var targetUIView: UIView!
+    
+    // MARK: - ViewController
+    private var vc:ATSignatureViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Only one single line code you need to add to your project
+        vc = ATSignatureViewController(signatureDelegate: self, targetView: targetUIView)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - Delegate
+    
+    //Set action after confirm button clicked with signature
+    func atSignatureSigned(_: ATSignatureViewController, didSign signatureImage : UIImage, signatureDidSavePath: String) {
+        //signatureDidSavePath: a filePath where actually saved after processing NSKeyedArchiver
+        print("Did Signature")
+    }
+    
+    //(optional)Set click action after cancel button clicked
+    func atSignatureCancel(_: ATSignatureViewController) {
+        print("Cancel")
+    }
+    //(optional)Set file directory
+    func atSignatureSetSaveDirectory(_: ATSignatureViewController) -> String {
+        //if nil or "" return, it will use the library default directory
+        return ""
+    }
+    //(optional)Set action after confirm button clicked with no signature
+    func atSignatureNotSigned(_: ATSignatureViewController) {
+        print("Not Signature")
     }
 
+    @IBAction func style1ButtonDidPress(_ sender: UIButton) {
+        vc.view.removeFromSuperview()
+        vc.removeBorder()
+        vc = ATSignatureViewController(signatureDelegate: self, targetView: targetUIView, display: ["Any String","Cancel","Done"], showModal: 1, borderModal: 1)
+    }
+    
+    @IBAction func style2ButtonDidPress(_ sender: UIButton) {
+        vc.view.removeFromSuperview()
+        vc.removeBorder()
+        vc = ATSignatureViewController(signatureDelegate: self, targetView: targetUIView, display: ["Any String","Cancel","Done"], showModal: 1, borderModal: 2)
+    }
+
+    @IBAction func style3ButtonDidPress(_ sender: UIButton) {
+        vc.view.removeFromSuperview()
+        vc.removeBorder()
+        vc = ATSignatureViewController(signatureDelegate: self, targetView: targetUIView, display: ["Any String","Cancel","Done"], showModal: 2, borderModal: 1)
+    }
+    
+    @IBAction func style4ButtonDidPress(_ sender: UIButton) {
+        vc.view.removeFromSuperview()
+        vc.removeBorder()
+        vc = ATSignatureViewController(signatureDelegate: self, targetView: targetUIView, display: ["Any String","Cancel","Done"], showModal: 2, borderModal: 2)
+    }
 }
 

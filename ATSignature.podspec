@@ -9,34 +9,15 @@
 Pod::Spec.new do |s|
   s.name             = 'ATSignature'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ATSignature.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
+  s.summary          = 'It is one of the most simple customized signature view with basic controlls including Button Actions, Button color, Button title. It has total four styles in the Example. https://github.com/apptasklpaco/ATSignature '
+  s.description      = 'You can simply override several delegate functions to handle user interactions. The implementation of delegate functions is optional. It also have several styles for the signature view. *(The size of signature view is based on a super view  assigned to the view controller. You should fix the size of the super view. Auto size is not recommanded.)'
   s.homepage         = 'https://github.com/apptasklpaco/ATSignature'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'apptasklpaco' => 'paco.yeung@eventionapp.com' }
+  s.author           = { 'AppTasnk - paco.yeung' => 'paco.yeung@eventionapp.com' }
   s.source           = { :git => 'https://github.com/apptasklpaco/ATSignature.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
-
   s.source_files = 'ATSignature/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'ATSignature' => ['ATSignature/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

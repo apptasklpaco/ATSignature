@@ -13,8 +13,8 @@ import UIKit
     @objc optional func atSignatureCancel(_: ATSignatureViewController)
     @objc optional func atSignatureNotSigned(_: ATSignatureViewController)
     @objc optional func atSignatureSetSaveDirectory(_: ATSignatureViewController) -> String
-    @objc optional func atSignatureSigned(_: ATSignatureViewController, didSign signatureImage : UIImage, signatureSavePath: String)
-    @objc optional func atSignatureInvalidDirectoryError(_: ATSignatureViewController)
+    @objc func atSignatureSigned(_: ATSignatureViewController, didSign signatureImage : UIImage, signatureDidSavePath: String)
+    //@objc optional func atSignatureInvalidDirectoryError(_: ATSignatureViewController)
 }
 
 open class ATSignatureViewController: UIViewController {
@@ -56,26 +56,32 @@ open class ATSignatureViewController: UIViewController {
         let lightColor = self.clickToStartButton.titleColor(for: .normal)?.withAlphaComponent(0.5)
         self.clickToStartButton.setTitleColor(lightColor, for: .normal)
     }
+    
     public func changeButtonDisplay(display: [String])
     {
-        self.clickToStartButton.titleLabel?.text = display[0]
-        self.cancelButton.titleLabel?.text = display[1]
-        self.confirmButton.titleLabel?.text = display[2]
+        self.clickToStartButton.setTitle(display[0], for: .normal)
+        self.cancelButton.setTitle(display[1], for: .normal)
+        self.confirmButton.setTitle(display[2], for: .normal)
+    }
+    
+    public func removeBorder()
+    {
+        self.layer.removeFromSuperlayer()
+        self.layer = nil
     }
     
     // MARK: - Initializers
     
     public convenience init(signatureDelegate: ATSignatureDelegate, targetView: UIView)
     {
-        let bundle = Bundle(for: ATSignatureViewController.self)
-        self.init(nibName: "ATSignatureViewController", bundle: bundle, signatureDelegate: signatureDelegate, targetView: targetView)
+        self.init(signatureDelegate: signatureDelegate, targetView: targetView, display: ["Tag to sign","Cancel","Done"])
     }
     
-    public convenience init(nibName: String?, bundle: Bundle?, signatureDelegate: ATSignatureDelegate, targetView: UIView) {
-        self.init(nibName: nibName, bundle: bundle, signatureDelegate: signatureDelegate, targetView: targetView, showModal: 2, borderModal: 2, display: ["點擊簽署","取消","完成"])
+    public convenience init(signatureDelegate: ATSignatureDelegate, targetView: UIView, display: [String]) {
+        self.init(signatureDelegate: signatureDelegate, targetView: targetView, display: display, showModal: 2, borderModal: 2)
     }
     
-    public init(nibName: String?, bundle: Bundle?, signatureDelegate: ATSignatureDelegate, targetView: UIView, showModal: Int, borderModal: Int, display: [String]) {
+    public init(signatureDelegate: ATSignatureDelegate, targetView: UIView, display: [String], showModal: Int, borderModal: Int) {
         
         //Init Vars
         self.signatureDelegate = signatureDelegate
@@ -83,8 +89,10 @@ open class ATSignatureViewController: UIViewController {
         self.showModal = showModal
         self.borderModal = borderModal
         self.display = display
+        let bundle = Bundle(for: ATSignatureViewController.self)
+        let nibName = "ATSignatureViewController"
         super.init(nibName: nibName, bundle: bundle)
-        
+
         // MARK: - Add a customized signature view to a super view
         
         self.targetView.addSubview(self.view)
@@ -186,12 +194,12 @@ open class ATSignatureViewController: UIViewController {
                 let filePath = (directory as NSString).appendingPathComponent("sig.data")
                 self.signatureView.saveSignature(filePath)
                 //Call a user's customized action after saving file at the app's local directory
-                self.signatureDelegate?.atSignatureSigned?(self, didSign: signedImg, signatureSavePath: filePath)
+                self.signatureDelegate?.atSignatureSigned(self, didSign: signedImg, signatureDidSavePath: filePath)
             } catch ATSignatureError.emptyDirectory {
                 //Invalid Directory
                 print("ATSignatureViewController.confirmButtonDidPress Invalid or Empty Directory")
                 //Call a user's customized action if invalid directory is detected
-                self.signatureDelegate?.atSignatureInvalidDirectoryError?(self)
+                //self.signatureDelegate?.atSignatureInvalidDirectoryError?(self)
             } catch {
                 print("ATSignatureViewController.confirmButtonDidPress Unhandled Exception")
             }

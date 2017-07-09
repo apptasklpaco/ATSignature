@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00EE45A21F124F89004A3D84 /* ATSignature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EE45A11F124F89004A3D84 /* ATSignature.framework */; };
 		2767697834DFD2B1C5B91C49 /* Pods_ATSignature_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5CAA77F20A137D18D27ECC /* Pods_ATSignature_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -14,7 +15,6 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		6B5ACB0E30324135A99A5B85 /* Pods_ATSignature_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45188CBDE685ED7DC2A66F5 /* Pods_ATSignature_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,9 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1791F593AF291A55C6E1CBE3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		00EE45A11F124F89004A3D84 /* ATSignature.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ATSignature.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/ATSignature-axueixwineitvrhehhvzcuevekjn/Build/Products/Debug-iphonesimulator/ATSignature/ATSignature.framework"; sourceTree = "<group>"; };
+		00EE45AA1F127350004A3D84 /* Pods_ATSignature_Tests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ATSignature_Tests.framework; path = "Pods/../build/Debug-iphoneos/Pods_ATSignature_Tests.framework"; sourceTree = "<group>"; };
+		1791F593AF291A55C6E1CBE3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		36AA4C653A8F614550ED85DB /* Pods-ATSignature_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATSignature_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ATSignature_Tests/Pods-ATSignature_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		42C0728DC39BED06C7C048AE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		42C0728DC39BED06C7C048AE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		4C03E58C795450F2F31BC49B /* Pods-ATSignature_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATSignature_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ATSignature_Tests/Pods-ATSignature_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5B5CAA77F20A137D18D27ECC /* Pods_ATSignature_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATSignature_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* ATSignature_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATSignature_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +45,7 @@
 		607FACE51AFB9204008FA782 /* ATSignature_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ATSignature_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7476FA74A577550C443FED82 /* ATSignature.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ATSignature.podspec; path = ../ATSignature.podspec; sourceTree = "<group>"; };
+		7476FA74A577550C443FED82 /* ATSignature.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ATSignature.podspec; path = ../ATSignature.podspec; sourceTree = "<group>"; };
 		A45188CBDE685ED7DC2A66F5 /* Pods_ATSignature_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATSignature_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B229896382BA49DB686DE107 /* Pods-ATSignature_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATSignature_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ATSignature_Example/Pods-ATSignature_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B4861AE3AB14054A59FFAE9D /* Pods-ATSignature_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATSignature_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ATSignature_Example/Pods-ATSignature_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B5ACB0E30324135A99A5B85 /* Pods_ATSignature_Example.framework in Frameworks */,
+				00EE45A21F124F89004A3D84 /* ATSignature.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +74,8 @@
 		2EEEA72D074DF9B1CBC79398 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00EE45AA1F127350004A3D84 /* Pods_ATSignature_Tests.framework */,
+				00EE45A11F124F89004A3D84 /* ATSignature.framework */,
 				A45188CBDE685ED7DC2A66F5 /* Pods_ATSignature_Example.framework */,
 				5B5CAA77F20A137D18D27ECC /* Pods_ATSignature_Tests.framework */,
 			);
@@ -496,11 +500,14 @@
 			baseConfigurationReference = B4861AE3AB14054A59FFAE9D /* Pods-ATSignature_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ATSignature/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -510,11 +517,14 @@
 			baseConfigurationReference = B229896382BA49DB686DE107 /* Pods-ATSignature_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ATSignature/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -523,10 +533,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 36AA4C653A8F614550ED85DB /* Pods-ATSignature_Tests.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -543,10 +550,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4C03E58C795450F2F31BC49B /* Pods-ATSignature_Tests.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
